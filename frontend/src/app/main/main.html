@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="panel panel-default">
+    <div class="panel-heading"> Beschreiben Sie ihre Reise :)
+      <div class="panel-body">
+        <div class="input-group">
+          <textarea class="form-control custom control" rows=3 ng-model="mainc.message" style="resize:none"></textarea>
+          <span class="input-group-addon btn btn-primary" ng-click="mainc.postMessage()">Post</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Meine Beschreibungen
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="message in mainc.messages">
+            {{message.msg}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

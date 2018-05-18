@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="col-md-6">
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Einloggen </div>
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label> Email Adresse  </label>
+            <input type="email" class="form-control" />    </div>
+          <div class="form-group">
+            <label> Passwort </label>
+            <input type="password" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-default"> Bestätigen </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="panel panel-default">
+      <div class="panel-heading"> Registrieren </div>
+      <div class="panel-body">
+        <form name="register" ng-submit="auth.register()">
+          <div class="form-group">
+            <label> Email Adresse  </label>
+            <input type="email" required="" name="email" ng-model="auth.user.email" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label> Passwort </label>
+            <input type="password" name="pwd" ng-model="auth.user.pwd" required="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label> Passwort wiederholen </label>
+            <input type="password" class="form-control" compare-to="auth.user.pwd" name="pwdConfirm" ng-model="pwdConfirm" required="" />
+          </div>
+          <div class="bg-warning" ng-show="register.pwdConfirm.$invalid && register.pwdConfirm.$dirty"> Passwort stimmt nicht überein !</div>
+          <br />
+          <button ng-disabled="register.pwdConfirm.$invalid" type="submit" class="btn btn-primary"> Bestätigen </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
